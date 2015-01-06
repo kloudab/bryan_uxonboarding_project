@@ -1,0 +1,23 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>User Profile</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+ 
+    <div class="UserProfile">
+    <h1 class="userProfile">User Profile</h1>
+        <h2 class="name">Name:</h2>
+            <h3 class="name">{{user.firstName}} {{user.lastName}}</h3>
+        <h2 class="contactInfoSection">Contact:</h2>
+            <h3 class="phoneNumber">Phone Number: {{user.phoneNumber}}</h3>
+            <h3 class="emailAddress">Email: {{user.emailAddress}}</h3>
+    </div>
+    <script src= "https://ajax.googleapis.com/ajax/libs/angularjs/1.2.28/angular.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
