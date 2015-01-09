@@ -1,3 +1,5 @@
-This is a readme.md file.
+BRYAN'S ONBOARDING PROJECT
 
-There is nothing in it yet.
+This project is Bryan's onboarding project for Banno.
+
+
