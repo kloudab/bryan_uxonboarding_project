@@ -2,19 +2,8 @@ html {
     background: black;
 }
 
-
-
 .UserProfile {
     background: blue;
-}
-
-h2.name {
-    margin-bottom: 0px;
-}
-
-h3.name {
-    color: white;
-    margin-top: 0px;
 }
 
 .contact {
