@@ -1,4 +1,4 @@
-angular.module("UserProfileApp", [])
+angular.module("UserProfileApp", ['ui-router', 'ngResource'])
 .controller('UserProfileController', function($scope) {
     $scope.profileVisibility = {
         showName: true,
