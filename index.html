@@ -13,20 +13,7 @@
 
 <body>
 
-  <div class="UserProfile" ng-controller="UserProfileController as profile">
-    <h1>User Profile</h1>
-    <button ng-click="toggleName()">Hide Name</button>
-    <button ng-click="toggleContactInfo()">Hide Contact Info</button>
-    
-    <div ng-show="profileVisibility.showName">
-      <h2>Name: {{user.firstName}} {{user.lastName}}</h2>
-    </div>
-    <div ng-show="profileVisibility.showContact">
-    <h2 class="contact">Contact:</h2>
-      <h3 class="contactInfo">Phone: {{user.phone}}</h3>
-      <h3 class="contactInfo">Email: {{user.email}}</h3>
-    </div>
-  </div>
+  <div user-profile-view></div>
 
 </body>
 
