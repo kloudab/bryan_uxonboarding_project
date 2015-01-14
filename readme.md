@@ -2,7 +2,7 @@
 
 This project is Bryan's onboarding project for Banno.
 
-##Dependencies
+##Setup
 
 * Download and install npm
 * Run """npm install"""
