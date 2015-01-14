@@ -1,5 +1,9 @@
-BRYAN'S ONBOARDING PROJECT
+#BRYAN'S ONBOARDING PROJECT
 
 This project is Bryan's onboarding project for Banno.
 
+##Dependencies
+
+* Download and install npm
+* Run """npm install"""
 
