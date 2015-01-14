@@ -3,10 +3,12 @@
 <head>
   <meta charset="utf-8">
   <title>User Profile</title>
+  
   <link rel="stylesheet" href="main.css">
   <script src="./node_modules/angular/angular.js"></script>
-  <script src="script.js"></script>
-
+  <script src="./script.js"></script>
+  <script src="./node_modules/angular-ui-router/release/angular-ui-router.js"></script>
+  <script src="./node_modules/angular-resource/angular-resource.js"></script>
 </head>
 
 <body>
@@ -17,7 +19,7 @@
     <button ng-click="toggleContactInfo()">Hide Contact Info</button>
     
     <div ng-show="profileVisibility.showName">
-        <h2>Name: {{user.firstName}} {{user.lastName}}</h2>
+      <h2>Name: {{user.firstName}} {{user.lastName}}</h2>
     </div>
     <div ng-show="profileVisibility.showContact">
     <h2 class="contact">Contact:</h2>
