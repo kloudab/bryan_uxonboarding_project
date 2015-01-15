@@ -36,3 +36,17 @@ UserProfileApp.directive('userProfileView', function() {
     templateUrl: './assets/templates/userProfileView.html'
   };
 });
+
+UserProfileApp.directive('userEditingProfileView', function() {
+  return {
+    restrict: 'E',
+    templateUrl: './assets/templates/userEditingProfileView.html'
+  };
+});
+
+UserProfileApp.directive('usersListingView', function() {
+  return {
+    restrict: 'E',
+    templateUrl: './assets/templates/usersListingView.html'
+  };
+});
