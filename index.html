@@ -13,7 +13,11 @@
 
 <body>
 
-  <div user-profile-view></div>
+  <div ng-controller='UserProfileController as profile'>
+    <users-listing-view></users-listing-view>
+    <div user-profile-view></div>
+    <user-editing-profile-view></user-editing-profile-view>
+  </div>
 
 </body>
 
