@@ -1,0 +1,29 @@
+<div id="UserProfile">
+  
+  <h1>User Profile</h1>
+  <button ng-click='toggleName()'>Hide Name</button>
+  <button ng-click='toggleContactInfo()'>Hide Contact Info</button>
+  <button ng-click='toggleUserEditingProfileView()'>Edit Profile</button>
+
+  <div ng-show='profileVisibility.showName'>
+    <div>
+      <h2 class='profileInfo'>Name:</h2>
+        <h4 class='profileInfo'>{user.firstName}} {{user.lastName}}</h4>
+    </div>
+  </div>
+    
+  <div ng-show='profileVisibility.showContact'>
+    <div>
+      <h2 class='profileInfo'>Contact:</h2>
+    </div>  
+    <div>
+      <h3 class='profileInfo'>Phone:</h3> 
+        <h4 class='profileInfo'>{user.phone}}</h4>
+    </div>
+    <div>
+      <h3 class='profileInfo'>Email:</h3> 
+        <h4 class='profileInfo'>{{user.email}}</h4>
+    </div>
+  </div>
+
+</div>

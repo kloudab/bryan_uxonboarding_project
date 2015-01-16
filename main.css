@@ -1,26 +1,42 @@
 html {
-    background: black;
+  background: green;
 }
 
-.UserProfile {
-    background: blue;
+#UserProfile,
+#UserProfileEdit {
+  background: blue;
 }
 
-.contact {
-    margin-bottom: 0px;
+#searchOtherUsers {
+  line-height: 30px;
+  background-color: orange;
+  height: 300px;
+  width: 300px;
+  padding: 5px;
+  float: right;
 }
 
-.contactInfo {
-    color: white;
-    margin-bottom: 0px;
-    margin-top: 0px;
+h2.profileInfo {
+  display: inline;
+  margin-bottom: 0px;
 }
 
+h3.profileInfo {
+  display: inline;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
 
+h4.profileInfo {
+  display: inline;
+  color: yellow;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
 
-
-
-
+.searchResults {
+  background: white;
+}
 
 
 
