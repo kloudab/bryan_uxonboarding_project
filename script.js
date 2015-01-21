@@ -1,6 +1,6 @@
 var UserProfileApp = angular.module('UserProfileApp', ['ui.router', 'ngResource']);
 
-UserProfileApp.controller('UserProfileController', function($scope) {
+UserProfileApp.controller('UserProfileController', function($scope, $resource) {
   $scope.profileVisibility = {
     showUserProfileView: true,
     showUserEditingProfileView: false,
@@ -8,7 +8,7 @@ UserProfileApp.controller('UserProfileController', function($scope) {
     showName: true,
     showContact: true
   };
-  
+    
   $scope.toggleUserProfileView = function() {
     $scope.profileVisibility.showUserProfileView = ($scope.profileVisibility.showUserProfileView === false ? true : false);
   };
@@ -37,6 +37,31 @@ UserProfileApp.directive('userProfileView', function() {
   };
 });
 
+UserProfileApp.factory('UsersFactory', function($resource) {
+  return $resource(
+    'localhost:24149/users',
+    null,
+    {get: {method: 'GET', isArray: true}}
+  );
+});
+
+UserProfileApp.factory('UsersService', function(UsersFactory) {
+  function getUsers() {
+    return UsersFactory.get().$promise;
+  }
+  return {
+    get: getUsers
+  };
+});
+
+UserProfileApp.controller('usersController', function($scope, UsersService) {
+  UsersService.get().then(function(usersList) {
+    $scope.users = usersList;
+  }, function(errorMessage) {
+    console.log(errorMessage);
+  });
+});
+  
 UserProfileApp.directive('userEditingProfileView', function() {
   return {
     restrict: 'E',

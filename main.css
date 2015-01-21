@@ -5,6 +5,7 @@ html {
 #UserProfile,
 #UserProfileEdit {
   background: blue;
+  border-radius: 25px;
 }
 
 #searchOtherUsers {
