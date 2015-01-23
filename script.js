@@ -13,6 +13,10 @@ UserProfileApp.config(function($stateProvider, $urlRouterProvider) {
     .state('edit', {
       url: '/edit',
       templateUrl: './assets/templates/userEditingProfileView.html'
+    })
+    .state('search_users', {
+      url: '/search_users',
+      templateUrl: './assets/templates/usersListingView.html'
     });
 });
 
