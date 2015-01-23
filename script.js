@@ -2,6 +2,9 @@ var UserProfileApp = angular.module('UserProfileApp', ['ui.router', 'ngResource'
 
 UserProfileApp.config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
+    .state('home', {
+      url: '/',
+    })
     .state('profile_view', {
       url: '/profile_view',
       templateUrl: './assets/templates/userProfileView.html',
