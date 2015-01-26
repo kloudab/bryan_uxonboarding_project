@@ -1,5 +1,3 @@
-var UserProfileApp = angular.module('UserProfileApp', ['ui.router', 'ngResource']);
-
 UserProfileApp.factory('getUsersFactory', function($resource) {
   return $resource(
     'http://localhost:24149/users',
