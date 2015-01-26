@@ -22,16 +22,16 @@ UserProfileApp.factory('updateUserFactory', function($resource) {
   );
 });
 
-UserProfileApp.factory('deleteUserFactory', function($resource) {
+UserProfileApp.factory('removeUserFactory', function($resource) {
   return $resource(
     'http://localhost:24149/users/:id',
     null,
-    {delete: {method: 'DELETE'}}
+    {remove: {method: 'DELETE'}}
   );
 });
 
 UserProfileApp.factory('UsersService', function(getUsersFactory,addUserFactory,
-                                              updateUserFactory, deleteUserFactory) {
+                                              updateUserFactory, removeUserFactory) {
   function getUsers() {
     return getUsersFactory.get().$promise;
   }
@@ -44,15 +44,15 @@ UserProfileApp.factory('UsersService', function(getUsersFactory,addUserFactory,
     return updateUserFactory.update(user).$promise;
   }
 
-  function deleteUser(user) {
-    return deleteUserFactory.delete(user).$promise;
+  function removeUser(user) {
+    return removeUserFactory.remove(user).$promise;
   }
 
   return {
     get: getUsers,
     post: addUser,
     put: updateUser,
-    delete: deleteUser
+    remove: removeUser
   };
 });
 
