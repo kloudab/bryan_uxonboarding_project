@@ -1,35 +1,3 @@
-UserProfileApp.factory('getUsersFactory', function($resource) {
-  return $resource(
-    'http://localhost:24149/users',
-    null,
-    {get: {method: 'GET', isArray: true}}
-  );
-});
-
-UserProfileApp.factory('addUserFactory', function($resource) {
-  return $resource(
-    'http://localhost:24149/users',
-    null,
-    {save: {method: 'POST'}}
-  );
-});
-
-UserProfileApp.factory('updateUserFactory', function($resource) {
-  return $resource(
-    'http://localhost:24149/users/:id',
-    null,
-    {update: {method: 'PUT'}}
-  );
-});
-
-UserProfileApp.factory('removeUserFactory', function($resource) {
-  return $resource(
-    'http://localhost:24149/users/:id',
-    null,
-    {remove: {method: 'DELETE'}}
-  );
-});
-
 UserProfileApp.factory('UsersService', function(getUsersFactory,addUserFactory,
                                               updateUserFactory, removeUserFactory) {
   function getUsers() {
