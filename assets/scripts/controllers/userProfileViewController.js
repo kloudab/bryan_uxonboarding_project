@@ -1,4 +1,4 @@
-UserProfileApp.controller('UserProfileViewController', function($scope) {
+UserProfileApp.controller('userProfileViewController', function($scope) {
   $scope.profileVisibility = {
     showName: true,
     showContact: true

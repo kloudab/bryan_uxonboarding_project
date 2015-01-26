@@ -1,40 +1,34 @@
 <div id='UserProfileEdit'>
-  <div>
-    <h1>User Profile Editor</h1>
-    <button ng-click='saveUserEdits()'>Save Changes</button>
-    <button ng-click='discardUserEdits()'>Discard Changes</button>
-    
-    <form name='editProfileForm' novalidate>
-      <div>
-        <label name='firstName'><h2 class="profileInfo">Name: </h2></label>
-        <input type='text'
-        name='firstName'
-        ng-model='firstName'
-        placeholder={{"Bryan"}} />
+  <h1>User Profile Editor</h1>
+  <button ng-click='saveUserEdits()'>Save Changes</button>
+  <button ng-click='discardUserEdits()'>Discard Changes</button>
 
-        <label name='lastName'></label>
-        <input type='text'
-        name='lastName'
-        ng-model='lastName'
-        placeholder={{"Klouda"}} />
-      </div>
+  <form name='editProfileForm' novalidate>
+    <div>
+      <label name='firstName'><h2 class="profileInfo">Name: </h2></label>
+      <input type='text'
+      name='firstName'
+      placeholder={{user.firstName}} />
 
-      <label name='contact'><h2 class="profileInfo">Contact: </h2></label>
-      <div>    
-        <label name='phone'><h3 class="profileInfo">Phone: </h3></label>
-        <input type='text'
-        name='phoneNumber'
-        ng-model='phoneNumber'
-        placeholder={{"319-721-7190"}} />
-      </div>
+      <label name='lastName'></label>
+      <input type='text'
+      name='lastName'
+      placeholder={{user.lastName}} />
+    </div>
 
-      <div>
-        <label name='email'><h3 class="profileInfo">Email: </h3></label>
-        <input type='email'
-        name='email'
-        ng-model='email'
-        placeholder={{"bryan.klouda@gmail.com"}} />
-      </div>
-    </form>
-  </div>
+    <label name='contact'><h2 class="profileInfo">Contact: </h2></label>
+    <div>    
+      <label name='phone'><h3 class="profileInfo">Phone: </h3></label>
+      <input type='text'
+      name='phone'
+      placeholder={{user.phone}} />
+    </div>
+
+    <div>
+      <label name='email'><h3 class="profileInfo">Email: </h3></label>
+      <input type='email'
+      name='email'
+      placeholder={{user.email}} />
+    </div>
+  </form>
 </div>  

@@ -3,7 +3,7 @@ UserProfileApp.factory('UsersService', function(userIdFactory,usersFactory) {
     return usersFactory.get().$promise;
   }
 
-  function addUser(user) {
+  function createUser(user) {
     return usersFactory.create(user).$promise;
   }
 
@@ -21,7 +21,7 @@ UserProfileApp.factory('UsersService', function(userIdFactory,usersFactory) {
 
   return {
     getUsers: getUsers,
-    addUser: addUser,
+    createUser: createUser,
     updateUser: updateUser,
     removeUser: removeUser,
     getUser: getUser
