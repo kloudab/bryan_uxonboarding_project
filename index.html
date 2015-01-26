@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>User Profile</title>
-  
+
   <link rel="stylesheet" href="main.css">
   <script src="./node_modules/angular/angular.js"></script>
   <script src="./node_modules/angular-ui-router/release/angular-ui-router.js"></script>
@@ -18,8 +18,12 @@
     <a href="#/edit"><button>Edit Profile</button></a>
     <a href="#/search_users"><button>Search Users</button></a>
   </div>
-  
+
   <div ui-view></div>
+
+  <div ng-controller='usersController'>
+    <h1>{{users[0]}}</h1>
+  </div>
 
 </body>
 
