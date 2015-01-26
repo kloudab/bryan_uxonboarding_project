@@ -8,6 +8,11 @@ html {
   border-radius: 25px;
 }
 
+#UserProfileCreate {
+  background: red;
+  border-radius: 25px;
+}
+
 #searchOtherUsers {
   line-height: 30px;
   background-color: orange;
