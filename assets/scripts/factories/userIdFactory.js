@@ -3,6 +3,7 @@ UserProfileApp.factory('userIdFactory', function($resource) {
     'http://localhost:24149/users/:id',
     null,
     {update: {method: 'PUT'},
-     remove: {method: 'DELETE'}}
+    remove: {method: 'DELETE'},
+ 	get: {method: 'GET'}}
   );
 });
