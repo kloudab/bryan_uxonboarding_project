@@ -29,6 +29,7 @@ UserProfileApp.controller('userController', function($scope, UsersService) {
 			console.log(user)
       console.log("Successfully Created!");
 		}, function(error) {
+      console.log("PIE")
 			console.log(error);
 		});
 	};
