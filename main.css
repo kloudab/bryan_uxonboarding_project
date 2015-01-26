@@ -5,12 +5,13 @@ html {
 #UserProfile,
 #UserProfileEdit {
   background: blue;
+  border-radius: 25px;
 }
 
 #searchOtherUsers {
   line-height: 30px;
   background-color: orange;
-  height: 300px;
+  height: 100%;
   width: 300px;
   padding: 5px;
   float: right;
