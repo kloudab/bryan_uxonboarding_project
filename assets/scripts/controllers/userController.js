@@ -18,7 +18,7 @@ UserProfileApp.controller('userController', function($scope, UsersService) {
 
 	$scope.removeUser = function(id) {
 		UsersService.removeUser(id).then(function() {
-      console.log("User Successfully Removed!");
+      		console.log("User Successfully Removed!");
 		}, function(error) {
 			console.log(error);
 		});
@@ -29,7 +29,7 @@ UserProfileApp.controller('userController', function($scope, UsersService) {
 			console.log(user)
       console.log("Successfully Created!");
 		}, function(error) {
-      console.log("PIE")
+      		console.log("PIE")
 			console.log(error);
 		});
 	};
