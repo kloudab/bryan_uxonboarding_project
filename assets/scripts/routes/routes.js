@@ -6,7 +6,6 @@ UserProfileApp.config(function($stateProvider, $urlRouterProvider) {
     .state('profile_view', {
       url: '/profile_view',
       templateUrl: './assets/templates/userProfileView.html',
-      controller: 'userProfileViewController'
     })
     .state('edit', {
       url: '/edit',
