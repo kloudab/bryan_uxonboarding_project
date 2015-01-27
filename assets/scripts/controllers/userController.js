@@ -27,7 +27,7 @@ UserProfileApp.controller('userController', function($scope, UsersService) {
 	$scope.createUser = function(user) {
 		UsersService.createUser(user).then(function(user) {
 			console.log(user)
-      console.log("Successfully Created!");
+     		console.log("Successfully Created!");
 		}, function(error) {
       		console.log("PIE")
 			console.log(error);
