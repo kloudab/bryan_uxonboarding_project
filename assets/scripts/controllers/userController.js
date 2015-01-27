@@ -1,6 +1,6 @@
 UserProfileApp.controller('userController', function($scope, UsersService) {
 
-	var getUser = function(id) { 
+	$scope.getUser = function(id) { 
 		UsersService.getUser(id).then(function(user) {
 			$scope.user = user;
 		}, function(error) {
@@ -8,7 +8,7 @@ UserProfileApp.controller('userController', function($scope, UsersService) {
 		});
 	};
 
-	var updateUser = function(id) {
+	$scope.updateUser = function(id) {
 		UsersService.updateUser(id).then(function() {
 			console.log("User Successfully Updated!");
 		}, function(error) {
@@ -16,7 +16,7 @@ UserProfileApp.controller('userController', function($scope, UsersService) {
 		});
 	};
 
-	var removeUser = function(id) {
+	$scope.removeUser = function(id) {
 		UsersService.removeUser(id).then(function() {
       console.log("User Successfully Removed!");
 		}, function(error) {
@@ -24,7 +24,7 @@ UserProfileApp.controller('userController', function($scope, UsersService) {
 		});
 	};
 
-	var createUser = function(user) {
+	$scope.createUser = function(user) {
 		UsersService.createUser(user).then(function(user) {
 			console.log(user)
       console.log("Successfully Created!");
