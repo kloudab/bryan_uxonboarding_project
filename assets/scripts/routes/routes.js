@@ -14,7 +14,7 @@ UserProfileApp.config(function($stateProvider, $urlRouterProvider) {
     })
     .state('search_users', {
       url: '/search_users',
-      templateUrl: './assets/templates/usersListingView.html',
+      templateUrl: './assets/templates/usersSearchView.html',
     })
     .state('create_user', {
       url: '/create_user',
