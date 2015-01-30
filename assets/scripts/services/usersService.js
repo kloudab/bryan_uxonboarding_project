@@ -1,4 +1,4 @@
-UserProfileApp.factory('UsersService', function(userIdFactory,usersFactory) {
+UserProfileApp.factory('usersService', function(userIdFactory,usersFactory) {
   function getUsers() {
     return usersFactory.get().$promise;
   }
