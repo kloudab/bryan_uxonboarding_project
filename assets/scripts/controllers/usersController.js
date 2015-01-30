@@ -1,6 +1,6 @@
-UserProfileApp.controller('usersController', function($scope, UsersService) {
+UserProfileApp.controller('usersController', function($scope, usersService) {
   
-  UsersService.get().then(function(usersList) {
+  usersService.getUsers().then(function(usersList) {
     $scope.users = usersList;
   }, function(error) {
     console.log(error);
