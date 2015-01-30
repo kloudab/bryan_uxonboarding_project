@@ -4,20 +4,20 @@
   <button ng-click='createUser(user)'>Create User</button>
   <button ng-click='clearForm()'>Clear Form</button>
 
-  <form name='editProfileForm' novalidate>
+  <form name='createProfileForm' novalidate>
     <div>
       <label name='firstName'><h2 class="profileInfo">Name: </h2></label>
       <input type='text'
       name='firstName'
       ng-model='user.firstName'
-      placeholder={{"Bryan"}}
+      placeholder={{placeholder.firstName}}
       required >
 
       <label name='lastName'></label>
       <input type='text'
       name='lastName'
       ng-model='user.lastName'
-      placeholder={{"Klouda"}}
+      placeholder={{placeholder.lastName}}
       required >
     </div>
 
@@ -27,7 +27,7 @@
       <input type='text'
       name='phone'
       ng-model='user.phone'
-      placeholder={{"319-721-7190"}}
+      placeholder={{placeholder.phone}}
       required >
     </div>
 
@@ -36,7 +36,7 @@
       <input type='email'
       name='email'
       ng-model='user.email'
-      placeholder={{"bryan.klouda@gmail.com"}}
+      placeholder={{placeholder.email}}
       required >
     </div>
   </form>
