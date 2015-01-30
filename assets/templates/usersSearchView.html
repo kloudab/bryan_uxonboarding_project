@@ -1,4 +1,4 @@
-<div id='searchOtherUsers' ng-controller='usersController'>
+<div id='searchUsers' ng-controller='usersController'>
   
     <form name='editProfileForm'>
       <label name='firstName'>First Name: </label>
@@ -31,7 +31,7 @@
     </form>
   
   <div class='searchResults' ng-repeat='user in users'>
-    user
+    {{user.firstName}} : {{user.lastName}}
   </div>
 
 </div>
