@@ -13,7 +13,7 @@ UserProfileApp.config(function($stateProvider, $urlRouterProvider) {
     })
     .state('search_users', {
       url: '/search_users',
-      templateUrl: './assets/templates/usersSearchView.html',
+      templateUrl: './assets/templates/userSearchView.html',
     })
     .state('create_user', {
       url: '/create_user',

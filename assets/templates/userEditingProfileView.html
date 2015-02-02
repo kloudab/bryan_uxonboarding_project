@@ -1,35 +1,33 @@
-<div id='UserProfileEdit' ng-controller = 'userController'>
+<div id='UserProfileEdit' ng-controller='userEditController'>
 
   <h1>User Profile Editor</h1>
-  <button ng-click='saveUserEdits()'>Save Changes</button>
+  <button ng-click='saveUserEdits(user)'>Save Changes</button>
   <button ng-click='discardUserEdits()'>Discard Changes</button>
 
+
+
   <form name='editProfileForm' novalidate>
-    <div>
-      <label name='firstName'><h2 class="profileInfo">Name: </h2></label>
-      <input type='text'
-      name='firstName'
-      placeholder={{user.firstName}} />
+    <div><h2 class="profileInfo">Name: </h2></div>
+    <div><h3 class="profileInfo">First: </h3>
+    <input type='text'
+    name='firstName'
+    placeholder={{user.firstName}}></div>
 
-      <label name='lastName'></label>
-      <input type='text'
-      name='lastName'
-      placeholder={{user.lastName}} />
-    </div>
+    <div><h3 class="profileInfo">Last: </h3>
+    <input type='text'
+    name='lastName'
+    placeholder={{user.lastName}}></div>
 
-    <label name='contact'><h2 class="profileInfo">Contact: </h2></label>
-    <div>    
-      <label name='phone'><h3 class="profileInfo">Phone: </h3></label>
-      <input type='text'
-      name='phone'
-      placeholder={{user.phone}} />
-    </div>
 
-    <div>
-      <label name='email'><h3 class="profileInfo">Email: </h3></label>
-      <input type='email'
-      name='email'
-      placeholder={{user.email}} />
-    </div>
+    <div><h2 class="profileInfo">Contact: </h2></div>
+    <div><h3 class="profileInfo">Phone: </h3>
+    <input type='text'
+    name='phone'
+    placeholder={{user.phone}}></div>
+
+    <div><h3 class="profileInfo">Email: </h3>
+    <input type='email'
+    name='email'
+    placeholder={{user.email}}></div>
   </form>
 </div>  

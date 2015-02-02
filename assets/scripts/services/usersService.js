@@ -11,8 +11,8 @@ UserProfileApp.factory('usersService', function(userIdFactory,usersFactory) {
     return userIdFactory.update(user).$promise;
   }
 
-  function removeUser(user) {
-    return userIdFactory.remove(user).$promise;
+  function removeUser(id) {
+    return userIdFactory.remove(id).$promise;
   }
 
   function getUser(id) {
