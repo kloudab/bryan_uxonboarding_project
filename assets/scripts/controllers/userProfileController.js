@@ -1,4 +1,4 @@
-UserProfileApp.controller('userProfileController', function($scope, $location, 
+UserProfileApp.controller('userProfileController', function($scope, $location,
                                                             usersService, userService) {
   $scope.profileVisibility = {
     showName: true,
@@ -21,10 +21,10 @@ UserProfileApp.controller('userProfileController', function($scope, $location,
     var userId = {id: user._id};
     usersService.removeUser(userId).then(function() {
       console.log("User successfully deleted!");
+      $location.path('/search_users');
     }, function(error) {
       console.log(error);
     });
-    $location.path('/search_users');
   };
 
   $scope.goToEditProfile = function() {
