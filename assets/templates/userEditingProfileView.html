@@ -11,11 +11,13 @@
     <div><h3 class="profileInfo">First: </h3>
     <input type='text'
     name='firstName'
+    ng-model='user.firstName'
     placeholder={{user.firstName}}></div>
 
     <div><h3 class="profileInfo">Last: </h3>
     <input type='text'
     name='lastName'
+    ng-model='user.lastName'
     placeholder={{user.lastName}}></div>
 
 
@@ -23,11 +25,13 @@
     <div><h3 class="profileInfo">Phone: </h3>
     <input type='text'
     name='phone'
+    ng-model='user.phone'
     placeholder={{user.phone}}></div>
 
     <div><h3 class="profileInfo">Email: </h3>
     <input type='email'
     name='email'
+    ng-model='user.email'
     placeholder={{user.email}}></div>
   </form>
 </div>  

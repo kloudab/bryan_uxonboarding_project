@@ -17,8 +17,8 @@ UserProfileApp.controller('userProfileController', function($scope, $location,
 
   $scope.user = getUser();
 
-  $scope.removeUser = function(id) {
-    var userId = {id: id};
+  $scope.removeUser = function(user) {
+    var userId = {id: user._id};
     usersService.removeUser(userId).then(function() {
       console.log("User successfully deleted!");
     }, function(error) {
