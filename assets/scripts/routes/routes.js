@@ -6,14 +6,17 @@ UserProfileApp.config(function($stateProvider, $urlRouterProvider) {
     .state('profile_view', {
       url: '/profile_view',
       templateUrl: './assets/templates/userProfileView.html',
-      controller: 'UserProfileViewController'
     })
     .state('edit', {
       url: '/edit',
-      templateUrl: './assets/templates/userEditingProfileView.html'
+      templateUrl: './assets/templates/userEditingProfileView.html',
     })
     .state('search_users', {
       url: '/search_users',
-      templateUrl: './assets/templates/usersListingView.html'
+      templateUrl: './assets/templates/userSearchView.html',
+    })
+    .state('create_user', {
+      url: '/create_user',
+      templateUrl: './assets/templates/userCreateProfileView.html',
     });
 });

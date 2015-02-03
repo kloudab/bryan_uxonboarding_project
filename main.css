@@ -8,7 +8,12 @@ html {
   border-radius: 25px;
 }
 
-#searchOtherUsers {
+#UserCreateProfile {
+  background: red;
+  border-radius: 25px;
+}
+
+#SearchUsers {
   line-height: 30px;
   background-color: orange;
   height: 100%;
@@ -38,33 +43,3 @@ h4.profileInfo {
 .searchResults {
   background: white;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -1,24 +1,29 @@
-UserProfileApp.factory('UsersService', function(userIdFactory,usersFactory) {
+UserProfileApp.factory('usersService', function(userIdFactory,usersFactory) {
   function getUsers() {
-    return getUsersFactory.get().$promise;
+    return usersFactory.get().$promise;
   }
 
-  function addUser(user) {
-    return addUserFactory.save(user).$promise;
+  function createUser(user) {
+    return usersFactory.create(user).$promise;
   }
 
   function updateUser(user) {
-    return updateUserFactory.update(user).$promise;
+    return userIdFactory.update(user).$promise;
   }
 
-  function removeUser(user) {
-    return removeUserFactory.remove(user).$promise;
+  function removeUser(id) {
+    return userIdFactory.remove(id).$promise;
+  }
+
+  function getUser(id) {
+    return userIdFactory.get(id).$promise;
   }
 
   return {
-    get: getUsers,
-    post: addUser,
-    put: updateUser,
-    remove: removeUser
+    getUsers: getUsers,
+    createUser: createUser,
+    updateUser: updateUser,
+    removeUser: removeUser,
+    getUser: getUser
   };
 });

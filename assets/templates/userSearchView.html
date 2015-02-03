@@ -1,0 +1,38 @@
+<div id='SearchUsers' ng-controller='userSearchController'>
+  
+    <form name='editProfileForm'>
+      <label name='firstName'>First Name: </label>
+      <input type='text'
+      name='firstName'
+      ng-model='firstName'
+      placeholder='nayrB' />
+      <br>
+
+      <label name='lastName'>Last Name: </label>
+      <input type='text'
+      name='lastName'
+      ng-model='lastName'
+      placeholder='aduolK' />
+      <br>
+
+      <label name='phone'>Phone: </label>
+      <input type='text'
+      name='phoneNumber'
+      ng-model='phoneNumber'
+      placeholder='0917-127-913' />
+      <br>
+
+      <label name='email'>Email: </label>
+      <input type='email'
+      name='email'
+      ng-model='email'
+      placeholder='moc.liamg@aduolk.nayrb' />
+      <br>
+    </form>
+  
+  <div class='searchResults' ng-repeat='user in users'>
+    <button ng-click='goToProfile(user)'>Get User</button>
+    <a>{{user.firstName}} : {{user.lastName}}</a>
+  </div>
+
+</div>

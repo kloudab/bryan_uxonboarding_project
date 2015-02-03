@@ -1,28 +1,29 @@
-<div id="UserProfile">
-  
+<div id="UserProfile" ng-controller='userProfileController'>
+
   <h1>User Profile</h1>
   <button ng-click='toggleName()'>Hide Name</button>
-  <button ng-click='toggleContactInfo()'>Hide Contact Info</button>
+  <button ng-click='toggleContactInfo()'>Hide Contact</button>
+  <button ng-click='removeUser(user)'>Delete User</button>
+  <button ng-click='goToEditProfile()'>Edit</button>
 
   <div ng-show='profileVisibility.showName'>
-    <div>
-      <h2 class='profileInfo'>Name:</h2>
-        <h4 class='profileInfo'>{{user.firstName}} {{user.lastName}}</h4>
-    </div>
+      <div><h2 class='profileInfo'>Name:</h2></div>
+
+      <div><h3 class='profileInfo'>First: </h3>
+           <h4 class='profileInfo'>{{user.firstName}}</h4></div>
+
+      <div><h3 class='profileInfo'>Last: </h3>
+           <h4 class='profileInfo'>{{user.lastName}}</h4></div>
   </div>
-    
+  
   <div ng-show='profileVisibility.showContact'>
-    <div>
-      <h2 class='profileInfo'>Contact:</h2>
-    </div>  
-    <div>
-      <h3 class='profileInfo'>Phone:</h3> 
-        <h4 class='profileInfo'>{{user.phone}}</h4>
-    </div>
-    <div>
-      <h3 class='profileInfo'>Email:</h3> 
-        <h4 class='profileInfo'>{{user.email}}</h4>
-    </div>
+      <div><h2 class='profileInfo'>Contact:</h2></div>
+
+      <div><h3 class='profileInfo'>Phone: </h3>
+           <h4 class='profileInfo'>{{user.phone}}</h4></div>
+
+      <div><h3 class='profileInfo'>Email: </h3>
+           <h4 class='profileInfo'>{{user.email}}</h4></div>
   </div>
 
 </div>
