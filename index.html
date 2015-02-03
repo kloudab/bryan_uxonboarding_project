@@ -8,6 +8,13 @@
   <script src="./node_modules/angular/angular.js"></script>
   <script src="./node_modules/angular-ui-router/release/angular-ui-router.js"></script>
   <script src="./node_modules/angular-resource/angular-resource.js"></script>
+  <script src="./assets/scripts/modules/UserProfileApp.js"></script>
+  <script src="./assets/scripts/routes/routes.js"></script>
+  <script src="./assets/scripts/controllers/userProfileViewController.js"></script>
+  <script src="./assets/scripts/controllers/usersController.js"></script>
+  <script src="./assets/scripts/factories/userIdFactory.js"></script>
+  <script src="./assets/scripts/factories/usersFactory.js"></script>
+  <script src="./assets/scripts/services/usersService.js"></script>
   <script src="./script.js"></script>
 </head>
 
@@ -17,13 +24,10 @@
     <a href="#/profile_view"><button>User Profile</button></a>
     <a href="#/edit"><button>Edit Profile</button></a>
     <a href="#/search_users"><button>Search Users</button></a>
+    <a href="#/create_user"><button>Create User</button></a>
   </div>
 
   <div ui-view></div>
-
-  <div ng-controller='usersController'>
-    <h1>{{users[0]}}</h1>
-  </div>
 
 </body>
 
