@@ -9,10 +9,10 @@ UserProfileApp.controller('userCreationController', function($scope, $location, 
 
 	$scope.createUser = function(user) {
 		usersService.createUser(user).then(function(user) {
-      console.log("Successfully Created!");
-      $scope.clearForm();
+	     	console.log("Successfully Created!");
+	     	$scope.clearForm();
 		}, function(error) {
-      console.log(error);
+	     	console.log(error);
 		});
 	};
 
