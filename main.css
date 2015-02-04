@@ -9,7 +9,7 @@ html {
 }
 
 #UserCreateProfile {
-  background: red;
+  background: white;
   border-radius: 25px;
 }
 
@@ -49,4 +49,12 @@ div.profileInfo {
   padding: 10px;
   margin: 0;
   display: inline;
+}
+
+input.ng-invalid {
+  border: 1px solid red;
+}
+
+input.ng-valid {
+  border: 1px solid green;
 }
