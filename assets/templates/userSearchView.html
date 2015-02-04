@@ -1,38 +1,31 @@
 <div id='SearchUsers' ng-controller='userSearchController'>
   
-    <form name='editProfileForm'>
-      <label name='firstName'>First Name: </label>
-      <input type='text'
-      name='firstName'
-      ng-model='firstName'
-      placeholder='nayrB' />
-      <br>
+  <div><input type='checkbox'
+         ng-checked='showSearchFilters'
+         ng-init='showSearchFilters = false'
+         ng-model='showSearchFilters'>Show Search Options</div>
 
-      <label name='lastName'>Last Name: </label>
-      <input type='text'
-      name='lastName'
-      ng-model='lastName'
-      placeholder='aduolK' />
-      <br>
+  <div ng-show='showSearchFilters'>
+    First:
+    <input type='text'
+           ng-model='firstName'>
 
-      <label name='phone'>Phone: </label>
-      <input type='text'
-      name='phoneNumber'
-      ng-model='phoneNumber'
-      placeholder='0917-127-913' />
-      <br>
+    Last:
+    <input type='text'
+           ng-model='lastName'>
 
-      <label name='email'>Email: </label>
-      <input type='email'
-      name='email'
-      ng-model='email'
-      placeholder='moc.liamg@aduolk.nayrb' />
-      <br>
-    </form>
+    Phone:
+    <input type='text'
+           ng-model='phone'>
+
+    Email:
+    <input type='text'
+           ng-model='email'>
+  </div>
   
-  <div class='searchResults' ng-repeat='user in users'>
+  <div class='searchResults' ng-repeat='user in users | filter:firstName | filter:lastName | filter:phone | filter:email'>
     <button ng-click='goToProfile(user)'>Get User</button>
-    <a>{{user.firstName}} : {{user.lastName}}</a>
+    <a>{{user.lastName}}, {{user.firstName}}</a>
   </div>
 
 </div>
