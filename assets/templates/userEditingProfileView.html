@@ -4,32 +4,34 @@
   <button ng-click='saveUserEdits(user)'>Save Changes</button>
   <button ng-click='discardUserEdits()'>Discard Changes</button>
 
-
-
   <form name='editProfileForm' novalidate>
-    <div><h2 class="profileInfo">Name: </h2></div>
-    <div><h3 class="profileInfo">First: </h3>
-    <input type='text'
+    
+    <div><h2 class="profileInfo">Name:</h2></div>
+    <div class="profileInfo"><h3>First:</h3>
+    <input
+    type='text'
     name='firstName'
     ng-model='user.firstName'
-    placeholder={{user.firstName}}></div>
+    placeholder={{user.firstName}}></div><br>
 
-    <div><h3 class="profileInfo">Last: </h3>
-    <input type='text'
+    <div class="profileInfo"><h3>Last:</h3>
+    <input
+    type='text'
     name='lastName'
     ng-model='user.lastName'
     placeholder={{user.lastName}}></div>
 
-
-    <div><h2 class="profileInfo">Contact: </h2></div>
-    <div><h3 class="profileInfo">Phone: </h3>
-    <input type='text'
+    <div><h2 class="profileInfo">Contact:</h2></div>
+    <div class="profileInfo"><h3>Phone:</h3>
+    <input
+    type='text'
     name='phone'
     ng-model='user.phone'
-    placeholder={{user.phone}}></div>
+    placeholder={{user.phone}}></div><br>
 
-    <div><h3 class="profileInfo">Email: </h3>
-    <input type='email'
+    <div class="profileInfo"><h3>Email:</h3>
+    <input
+    type='email'
     name='email'
     ng-model='user.email'
     placeholder={{user.email}}

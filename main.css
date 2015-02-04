@@ -22,24 +22,31 @@ html {
   float: right;
 }
 
-h2.profileInfo {
+.searchResults {
+  background: white;
+}
+
+h2 {
   display: inline;
   margin-bottom: 0px;
 }
 
-h3.profileInfo {
+h3 {
   display: inline;
   margin-bottom: 0px;
   margin-top: 0px;
 }
 
-h4.profileInfo {
+h4 {
   display: inline;
   color: yellow;
   margin-bottom: 0px;
   margin-top: 0px;
 }
 
-.searchResults {
-  background: white;
+div.profileInfo {
+  width: 320px;
+  padding: 10px;
+  margin: 0;
+  display: inline;
 }
