@@ -1,9 +1,9 @@
 <div id='SearchUsers' ng-controller='userSearchController'>
   
-  <div><input type='checkbox'
+  <div><label><input type='checkbox'
          ng-checked='showSearchFilters'
          ng-init='showSearchFilters = false'
-         ng-model='showSearchFilters'>Show Search Options</div>
+         ng-model='showSearchFilters'>Show Search Options</label></div>
 
   <div ng-show='showSearchFilters'>
     First:
