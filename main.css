@@ -1,5 +1,6 @@
 html {
-  background: green;
+  background-image: url("./assets/images/catsInBox.gif");
+  background-size: 100%;
 }
 
 #UserProfile,
@@ -57,4 +58,8 @@ input.ng-invalid {
 
 input.ng-valid {
   border: 1px solid green;
+}
+
+th {
+  text-align: left;
 }
