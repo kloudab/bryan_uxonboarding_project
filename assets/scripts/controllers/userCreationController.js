@@ -20,4 +20,6 @@ UserProfileApp.controller('userCreationController', function($scope, $location, 
 		$scope.createProfileForm.$setPristine();
 		$scope.user = {};
 	}
+
+	$scope.phonePattern = /^\(?(\d{3})\)?[- | ''](\d{3})[- | ''](\d{4})$/;
 });

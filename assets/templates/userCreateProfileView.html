@@ -5,13 +5,13 @@
   <button ng-click='clearForm()'>Clear Form</button>
 
   <form name='createProfileForm' ng-model='user' novalidate>
-    
     <div><h2 class="profileInfo">Name:</h2></div>
     <div class="profileInfo"><h3>First:</h3></div>
     <input
     type='text'
     name='firstName'
     ng-model='user.firstName'
+    ng-minlength=3
     placeholder={{placeholder.firstName}} required><br>
 
     <div class="profileInfo"><h3>Last:</h3></div>
@@ -19,6 +19,7 @@
     type='text'
     name='lastName'
     ng-model='user.lastName'
+    ng-minlength=3
     placeholder={{placeholder.lastName}} required>
 
     <div><h2 class="profileInfo">Contact:</h2></div>
@@ -27,6 +28,8 @@
     type='text'
     name='phone'
     ng-model='user.phone'
+    ng-minlength=12 ng-maxlength=12
+    ng-pattern='phonePattern'
     placeholder={{placeholder.phone}} required><br>
 
     <div class="profileInfo"><h3>Email:</h3></div>
