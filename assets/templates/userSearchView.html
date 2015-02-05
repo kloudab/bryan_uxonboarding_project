@@ -6,26 +6,44 @@
          ng-model='showSearchFilters'>Show Search Options</label></div>
 
   <div ng-show='showSearchFilters'>
-    First:
-    <input type='text'
-           ng-model='firstName'>
-
-    Last:
-    <input type='text'
-           ng-model='lastName'>
-
-    Phone:
-    <input type='text'
-           ng-model='phone'>
-
-    Email:
-    <input type='text'
-           ng-model='email'>
+  <table>
+    <tr>
+      <th>First:</th>
+      <td><input type='text'
+                 ng-model='firstName'></td>
+    </tr>
+    <tr>
+      <th>Last:</th>
+        <td><input type='text'
+                   ng-model='lastName'></td>
+    </tr>
+    <tr>
+      <th>Phone:</th>
+        <td><input type='text'
+                   ng-model='phone'></td>
+    </tr>
+    <tr>
+      <th>Email:</th>
+        <td><input type='text'
+                   ng-model='email'></td>
+    </tr>
+  </table>
   </div>
   
-  <div class='searchResults' ng-repeat='user in users | filter:firstName | filter:lastName | filter:phone | filter:email'>
-    <button ng-click='goToProfile(user)'>Get User</button>
-    <a>{{user.lastName}}, {{user.firstName}}</a>
+  <table>
+    <tr>
+      <th><button ng-click='changeBackground()'>FUN BUTTON</button></th>
+      <th>First</th>
+      <th>Last</th>
+      <th>Phone</th>
+    </tr>
+    <tr class='searchResults' ng-repeat='user in users | filter:firstName | filter:lastName | filter:phone | filter:email'>
+      <td><button ng-click='goToProfile(user)'>Get User</button></td>
+      <td>{{user.firstName}}</td>
+      <td>{{user.lastName}}</td>
+      <td>{{user.phone}}</td>
+    </tr>
+  </table>
   </div>
 
 </div>
