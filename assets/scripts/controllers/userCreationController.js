@@ -7,12 +7,14 @@ UserProfileApp.controller('userCreationController', function($scope, $location, 
 		email : "Your email address here"
 	};
 
-	$scope.emptyUser = {
-		firstName : "",
-		lastName : "",
-		phone : "",
-		email : ""
-	};
+	$scope.resetUser = function() {
+		$scope.user = {
+			firstName : "",
+			lastName : "",
+			phone : "",
+			email : ""
+		};
+	}
 
 	$scope.createUser = function(user) {
 		usersService.createUser(user).then(function(user) {
@@ -25,7 +27,7 @@ UserProfileApp.controller('userCreationController', function($scope, $location, 
 
 	$scope.clearForm = function() {
 		$scope.createProfileForm.$setPristine();
-		$scope.user = $scope.emptyUser;
+		$scope.resetUser();
 	}
 
 	$scope.alertInformation = function() {

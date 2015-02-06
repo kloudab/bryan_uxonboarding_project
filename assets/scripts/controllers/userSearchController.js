@@ -26,4 +26,24 @@ UserProfileApp.controller('userSearchController', function($scope, $location,
     // element.style.backgroundSize = '10%';
   }
 
+  $scope.showFirstNames = true;
+  $scope.showLastNames = true;
+  $scope.showPhoneNumbers = true;
+  $scope.showEmails = true;
+
+  $scope.toggleShowFirstNames = function() {
+    $scope.showFirstNames = !$scope.showFirstNames
+  }
+  $scope.toggleShowLastNames = function() {
+    $scope.showLastNames = !$scope.showLastNames
+  }
+  $scope.toggleShowPhoneNumbers = function() {
+    $scope.showPhoneNumbers = !$scope.showPhoneNumbers
+  }
+  $scope.toggleShowEmails = function() {
+    $scope.showEmails = !$scope.showEmails
+  }
+
+
+
 });
