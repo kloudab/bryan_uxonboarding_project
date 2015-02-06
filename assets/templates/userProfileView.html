@@ -1,29 +1,33 @@
 <div id="UserProfile" ng-controller='userProfileController'>
 
   <h1>User Profile</h1>
-  <button ng-click='toggleName()'>Hide Name</button>
-  <button ng-click='toggleContactInfo()'>Hide Contact</button>
-  <button ng-click='removeUser(user)'>Delete User</button>
-  <button ng-click='goToEditProfile()'>Edit</button>
 
-  <div ng-show='profileVisibility.showName'>
-      <div><h2 class='profileInfo'>Name:</h2></div>
+  <table>
+    <tr><th>Name:</th></tr>
+    <tr>
+      <td><div class="profileInfo">First:</div></td>
+      <td><div ng-show='showName' ng-model='user.firstName'>{{user.firstName}}</div></td>
+    </tr>
+    <tr>
+      <td><div class="profileInfo">Last:</div></td>
+      <td><div ng-show='showName' ng-model='user.lastName'>{{user.lastName}}</div></td>
+    </tr>
 
-      <div class='profileInfo'><h3>First:</h3>
-           <h4 class='profileInfo'>{{user.firstName}}</h4></div><br>
-
-      <div class='profileInfo'><h3>Last:</h3>
-           <h4 class='profileInfo'>{{user.lastName}}</h4></div>
-  </div>
-  
-  <div ng-show='profileVisibility.showContact'>
-      <div><h2 class='profileInfo'>Contact:</h2></div>
-
-      <div class='profileInfo'><h3>Phone:</h3>
-           <h4 class='profileInfo'>{{user.phone}}</h4></div><br>
-
-      <div class='profileInfo'><h3>Email:</h3>
-           <h4 class='profileInfo'>{{user.email}}</h4></div>
-  </div>
+    <tr><th>Contact:</th></tr>
+    <tr>
+      <td><div class="profileInfo">Phone:</div></td>
+      <td><div ng-show='showContact' ng-model='user.phone'>{{user.phone}}</div></td>
+    </tr>
+    <tr>
+      <td><div class="profileInfo">Email:</div></td>
+      <td><div ng-show='showContact' ng-model='user.email'>{{user.email}}</div></td>
+    </tr>
+    <tr>
+      <td><button ng-click='toggleShowName()'>{{showNameButtonText}}</button></td>
+      <td><button ng-click='toggleShowContact()'>{{showContactButtonText}}</button></td>
+      <td><button ng-click='removeUser(user)'>Delete User</button></td>
+      <td><button ng-click='goToEditProfile()'>Edit</button></td>
+    </tr>
+  </table>
 
 </div>

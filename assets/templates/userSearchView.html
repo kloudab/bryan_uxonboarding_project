@@ -8,40 +8,47 @@
   <div ng-show='showSearchFilters'>
   <table>
     <tr>
+      <th>Any:</th>
+      <td><input type='text'
+                 ng-model='search.$'></td>
+    </tr>
+    <tr>
       <th>First:</th>
       <td><input type='text'
-                 ng-model='firstName'></td>
+                 ng-model='search.firstName'></td>
     </tr>
     <tr>
       <th>Last:</th>
-        <td><input type='text'
-                   ng-model='lastName'></td>
+      <td><input type='text'
+                 ng-model='search.lastName'></td>
     </tr>
     <tr>
       <th>Phone:</th>
-        <td><input type='text'
-                   ng-model='phone'></td>
+      <td><input type='text'
+                 ng-model='search.phone'></td>
     </tr>
     <tr>
       <th>Email:</th>
-        <td><input type='text'
-                   ng-model='email'></td>
+      <td><input type='text'
+                 ng-model='search.email'></td>
     </tr>
   </table>
   </div>
   
   <table>
     <tr>
-      <th><button ng-click='changeBackground()'>FUN BUTTON</button></th>
-      <th>First</th>
-      <th>Last</th>
-      <th>Phone</th>
+      <th><button class='fullButton' ng-click='changeBackground()'>FUN BUTTON</button></th>
+      <th><button class='fullButton' ng-click='toggleShowFirstNames()'>First</button></th>
+      <th><button class='fullButton' ng-click='toggleShowLastNames()'>Last</button></th>
+      <th><button class='fullButton' ng-click='toggleShowPhoneNumbers()'>Phone</button></th>
+      <th><button class='fullButton' ng-click='toggleShowEmails()'>Email</button></th>
     </tr>
-    <tr class='searchResults' ng-repeat='user in users | filter:firstName | filter:lastName | filter:phone | filter:email'>
-      <td><button ng-click='goToProfile(user)'>Get User</button></td>
-      <td>{{user.firstName}}</td>
-      <td>{{user.lastName}}</td>
-      <td>{{user.phone}}</td>
+    <tr class='searchResults' ng-repeat='user in users | filter:search:strict'>
+      <td><button class='fullButton' ng-click='goToProfile(user)'>Get User</button></td>
+      <td><div ng-show='showFirstNames'>{{user.firstName}}</div></td>
+      <td><div ng-show='showLastNames'>{{user.lastName}}</div></td>
+      <td><div ng-show='showPhoneNumbers'>{{user.phone}}</div></td>
+      <td><div ng-show='showEmails'>{{user.email}}</div></td>
     </tr>
   </table>
   </div>

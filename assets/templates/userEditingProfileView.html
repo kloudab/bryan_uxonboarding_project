@@ -1,40 +1,48 @@
 <div id='UserProfileEdit' ng-controller='userEditController'>
 
   <h1>User Profile Editor</h1>
-  <button ng-click='saveUserEdits(user)'>Save Changes</button>
-  <button ng-click='discardUserEdits()'>Discard Changes</button>
 
   <form name='editProfileForm' novalidate>
-    
-    <div><h2 class="profileInfo">Name:</h2></div>
-    <div class="profileInfo"><h3>First:</h3>
-    <input
-    type='text'
-    name='firstName'
-    ng-model='user.firstName'
-    placeholder={{user.firstName}}></div><br>
+  <table>
+    <tr><th>Name:</th></tr>
+    <tr>
+      <td><div class="profileInfo">First:</div></td>
+      <td><input type='text'
+                 name='firstName'
+                 ng-model='user.firstName'
+                 ng-minlength=3 required></td>
+    </tr>
+    <tr>
+      <td><div class="profileInfo">Last:</div></td>
+      <td><input type='text'
+                 name='lastName'
+                 ng-model='user.lastName'
+                 ng-minlength=3 required></td>
+    </tr>
 
-    <div class="profileInfo"><h3>Last:</h3>
-    <input
-    type='text'
-    name='lastName'
-    ng-model='user.lastName'
-    placeholder={{user.lastName}}></div>
+    <tr><th>Contact:</th></tr>
+    <tr>
+      <td><div class="profileInfo">Phone:</div></td>
+      <td><input type='text'
+                 name='phone'
+                 ng-model='user.phone'
+                 ng-minlength=12 ng-maxlength=14
+                 ng-pattern='phonePattern' required></td>
+      <td><button ng-click='alertInformation()'>?</button></td>
+    </tr>
+    <tr>
+      <td><div class="profileInfo">Email:</div></td>
+      <td><input type='email'
+                 name='email'
+                 ng-model='user.email' required></td>
+    </tr>
+    <tr>
+      <td><button ng-click='saveUserEdits(user)'>Save</button></td>
+      <td><button ng-click='discardUserEdits()' class='clearButton'>Discard Edits</button></td>
+    </tr>
 
-    <div><h2 class="profileInfo">Contact:</h2></div>
-    <div class="profileInfo"><h3>Phone:</h3>
-    <input
-    type='text'
-    name='phone'
-    ng-model='user.phone'
-    placeholder={{user.phone}}></div><br>
-
-    <div class="profileInfo"><h3>Email:</h3>
-    <input
-    type='email'
-    name='email'
-    ng-model='user.email'
-    placeholder={{user.email}}
-    ng-disabled='true'>Email Address Cannot Be Changed</div>
+  </table>
   </form>
 </div>  
+  
+  
