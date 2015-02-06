@@ -3,10 +3,16 @@ body {
   background-size: 100%;
 }
 
-#UserProfile,
-#UserProfileEdit {
+#UserProfile {
   background: blue;
-  border-radius: 25px;
+  border-radius: 10px;
+  width: 45%;
+}
+
+#UserProfileEdit {
+  background: red;
+  border-radius: 10px;
+  width: 45%;
 }
 
 #UserCreateProfile {
@@ -19,9 +25,21 @@ body {
   line-height: 30px;
   background-color: orange;
   height: 100%;
-  width: 40%;
+  width: inherit;
+  height: inherit;
   padding: 5px;
   float: right;
+}
+
+.fullButton {
+  display: block;
+  text-align: center;
+  width: 100%;
+}
+
+.getUserButtonText {
+  text-align: center;
+  width: inherit;
 }
 
 .searchResults {
