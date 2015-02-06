@@ -11,4 +11,11 @@ UserProfileApp.controller('userEditController', function($scope, $location, user
 		$location.path("/profile_view");
 	}
 
+	$scope.alertInformation = function() {
+		alert("Format Options for Phone Number:\n\n" +
+			  "Preferred- (xxx) xxx-xxxx\n" + 
+			  "Accepted- xxx xxx xxxx\n" + 
+			  "Accepted- xxx-xxx-xxxx");
+	}
+
 })
