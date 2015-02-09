@@ -4,6 +4,7 @@ UserProfileApp.controller('userProfileController', function($scope, $location,
   $scope.showContact = true;
   $scope.showNameButtonText = "Hide Name";
   $scope.showContactButtonText = "Hide Contact";
+  $scope.user = usersService.getUserById($scope.id);
 
   $scope.toggleShowName = function() {
     $scope.showName = !$scope.showName;
@@ -17,17 +18,17 @@ UserProfileApp.controller('userProfileController', function($scope, $location,
   $scope.toggleShowContact = function() {
     $scope.showContact = !$scope.showContact
     if ($scope.showContact == true) {
-      $scope.showContactButtonText = "Hide Name"
+      $scope.showContactButtonText = "Hide Contact"
     } else {
-      $scope.showContactButtonText = "Show Name"
+      $scope.showContactButtonText = "Show Contact"
     };
   };
 
-  $scope.getUser = function() {
-    return userService.getUser();
-  };
+  // $scope.getUser = function() {
+  //   return userService.getUser();
+  // };
 
-  $scope.user = $scope.getUser();
+  // $scope.user = $scope.getUser();
 
   $scope.removeUser = function(user) {
     var userId = {id: user._id};

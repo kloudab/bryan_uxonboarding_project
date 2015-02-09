@@ -4,6 +4,6 @@ UserProfileApp.factory('userIdFactory', function($resource) {
     {id: '@_id'},
     {update: {method: 'PUT'},
     remove: {method: 'DELETE'},
- 	get: {method: 'GET'}}
+ 	get: {method: 'GET', isArray: true}}
   );
 });

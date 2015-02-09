@@ -9,7 +9,8 @@ UserProfileApp.controller('userSearchController', function($scope, $location,
 
   $scope.goToProfile = function(user) {
     userService.setUser(user);
-    $location.path("/profile_view");
+    var id = user._id;
+    $location.path("/profile_view/@id");
   }
   
   $scope.changeBackground = function() {

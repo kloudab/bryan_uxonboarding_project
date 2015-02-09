@@ -1,4 +1,4 @@
-UserProfileApp.factory('usersService', function(userIdFactory,usersFactory) {
+UserProfileApp.service('usersService', function(userIdFactory,usersFactory) {
   function getUsers() {
     return usersFactory.get().$promise;
   }
@@ -15,7 +15,7 @@ UserProfileApp.factory('usersService', function(userIdFactory,usersFactory) {
     return userIdFactory.remove(id).$promise;
   }
 
-  function getUser(id) {
+  function getUserById(id) {
     return userIdFactory.get(id).$promise;
   }
 
@@ -24,6 +24,6 @@ UserProfileApp.factory('usersService', function(userIdFactory,usersFactory) {
     createUser: createUser,
     updateUser: updateUser,
     removeUser: removeUser,
-    getUser: getUser
+    getUserById: getUserById
   };
 });
