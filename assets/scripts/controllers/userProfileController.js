@@ -1,10 +1,5 @@
 UserProfileApp.controller('userProfileController', function($scope, $location,
                                                             usersService, userService) {
-  $scope.showName = true;
-  $scope.showContact = true;
-  $scope.showNameButtonText = "Hide Name";
-  $scope.showContactButtonText = "Hide Contact";
-  $scope.user = usersService.getUserById($scope.id);
 
   $scope.toggleShowName = function() {
     $scope.showName = !$scope.showName;
@@ -24,11 +19,13 @@ UserProfileApp.controller('userProfileController', function($scope, $location,
     };
   };
 
-  // $scope.getUser = function() {
-  //   return userService.getUser();
-  // };
-
-  // $scope.user = $scope.getUser();
+  $scope.getUserById = function() {
+    usersService.getUserById($scope.id).then(function(user) {
+      $scope.user = user;
+    }, function(error) {
+      console.log(error);
+    });
+  }
 
   $scope.removeUser = function(user) {
     var userId = {id: user._id};
@@ -43,5 +40,11 @@ UserProfileApp.controller('userProfileController', function($scope, $location,
   $scope.goToEditProfile = function() {
     $location.path('/edit');
   }
+  
+  $scope.showName = true;
+  $scope.showContact = true;
+  $scope.showNameButtonText = "Hide Name";
+  $scope.showContactButtonText = "Hide Contact";
+  $scope.getUserById();
 
 });
