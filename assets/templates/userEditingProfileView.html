@@ -36,6 +36,7 @@
                  name='email'
                  ng-model='user.email' required></td>
     </tr>
+    {{user._id}}
     <tr>
       <td><button ng-click='saveUserEdits(user)'>Save</button></td>
       <td><button ng-click='discardUserEdits()' class='clearButton'>Discard Edits</button></td>

@@ -11,15 +11,15 @@ UserProfileApp.config(function($stateProvider, $urlRouterProvider) {
       }
     })
     .state('edit', {
-      url: '/edit',
+      url: '/edit/:id',
       templateUrl: './assets/templates/userEditingProfileView.html',
-    })
-    .state('search_users', {
-      url: '/search_users/:id',
-      templateUrl: './assets/templates/userSearchView.html',
       controller: function($scope, $stateParams) {
         $scope.id = $stateParams.id;
       }
+    })
+    .state('search_users', {
+      url: '/search_users',
+      templateUrl: './assets/templates/userSearchView.html',
     })
     .state('create_user', {
       url: '/create_user',

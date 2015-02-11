@@ -1,6 +1,10 @@
-UserProfileApp.controller('userEditController', function($scope, $location, userService, usersService) {
+UserProfileApp.controller('userEditController', function($scope, $location, usersService) {
 	
-	$scope.user = userService.getUser();
+  usersService.getUserById($scope.id).then(function(users) {
+    $scope.user = users[0]; //ERROR returning a list of users instead of a user
+  }, function(error) {
+    console.log(error);
+  });
 
 	$scope.saveUserEdits = function(user) {
 		var userId = {id: user._id};

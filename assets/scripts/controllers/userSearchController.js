@@ -1,5 +1,4 @@
-UserProfileApp.controller('userSearchController', function($scope, $location,
-                                                           userService, usersService) {
+UserProfileApp.controller('userSearchController', function($scope, $location, usersService) {
   
   usersService.getUsers().then(function(usersList) {
     $scope.users = usersList;
@@ -7,12 +6,6 @@ UserProfileApp.controller('userSearchController', function($scope, $location,
     console.log(error);
   });
 
-  $scope.goToProfile = function(user) {
-    userService.setUser(user);
-    var id = user._id;
-    $location.path("/profile_view/@id");
-  }
-  
   $scope.changeBackground = function() {
     var backgrounds = ["./assets/gifs/aot.gif", "./assets/gifs/catsInBox.gif", "./assets/gifs/minecraft.gif",
                        "./assets/gifs/pikachuNyan.gif", "./assets/gifs/spiral.gif", "./assets/gifs/torus.gif",
@@ -44,7 +37,5 @@ UserProfileApp.controller('userSearchController', function($scope, $location,
   $scope.toggleShowEmails = function() {
     $scope.showEmails = !$scope.showEmails
   }
-
-
 
 });
