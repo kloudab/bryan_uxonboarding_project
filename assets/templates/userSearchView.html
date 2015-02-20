@@ -46,7 +46,7 @@
     <tr class='searchResults' ng-repeat='user in users | filter:search:strict'>
 <!--       <td><button class='fullButton' ng-click='goToProfile(user)'>Get User</button></td>
  -->      
-      <td><a ui-sref="profile_view({id: '{{user._id}}' })"><button class='fullButton'>Get User</button></a>
+      <td><a ui-sref="profile({id: '{{user._id}}' })"><button class='fullButton'>Get User</button></a>
       <td><div ng-show='showFirstNames'>{{user.firstName}}</div></td>
       <td><div ng-show='showLastNames'>{{user.lastName}}</div></td>
       <td><div ng-show='showPhoneNumbers'>{{user.phone}}</div></td>
