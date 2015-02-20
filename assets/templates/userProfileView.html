@@ -21,13 +21,13 @@
       <td><div class="profileInfo">Email:</div></td>
       <td><div ng-show='showContact' ng-model='user.email'>{{user.email}}</div></td>
     </tr>
-    {{user._id}}
     <tr>
       <td><button ng-click='toggleShowName()'>{{showNameButtonText}}</button></td>
       <td><button ng-click='toggleShowContact()'>{{showContactButtonText}}</button></td>
       <td><button ng-click='removeUser(user)'>Delete User</button></td>
-      <td><a ui-sref="edit( {id: '{{user._id}}' } )"><button>Edit</button></a></td>
+      <td><a ui-sref="profile_view.edit({id: '{{user._id}}' })"><button>Edit</button></a></td>
     </tr>
   </table>
+
 
 </div>

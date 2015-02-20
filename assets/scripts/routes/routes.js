@@ -3,18 +3,23 @@ UserProfileApp.config(function($stateProvider, $urlRouterProvider) {
     .state('home', {
       url: '/',
     })
-    .state('profile_view', {
+.state('profile_view', {
       url: '/profile_view/:id',
       templateUrl: './assets/templates/userProfileView.html',
       controller: function($scope, $stateParams) {
         $scope.id = $stateParams.id;
+      },
+      resolve:{
+        id: ['$stateParams', function($stateParams){
+          return $stateParams.id;
+        }]
       }
     })
-    .state('edit', {
-      url: '/edit/:id',
+    .state('profile_view.edit', {
+      url: '^/edit/:id',
       templateUrl: './assets/templates/userEditingProfileView.html',
-      controller: function($scope, $stateParams) {
-        $scope.id = $stateParams.id;
+      controller: function($scope, $stateParams, id) {
+        $scope.id = id;
       }
     })
     .state('search_users', {

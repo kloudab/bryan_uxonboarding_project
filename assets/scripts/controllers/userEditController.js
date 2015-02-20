@@ -1,7 +1,7 @@
 UserProfileApp.controller('userEditController', function($scope, $location, usersService) {
 	
-  usersService.getUserById($scope.id).then(function(users) {
-    $scope.user = users[0]; //ERROR returning a list of users instead of a user
+  usersService.getUserById($scope.id).then(function(user) {
+    $scope.user = user;
   }, function(error) {
     console.log(error);
   });

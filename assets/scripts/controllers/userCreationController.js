@@ -14,10 +14,10 @@ UserProfileApp.controller('userCreationController', function($scope, $location, 
 			phone : "",
 			email : ""
 		};
-	}
+	};
 
 	$scope.createUser = function(user) {
-		usersService.createUser(user).then(function(user) {
+		usersService.createUser(user).then(function() {
 	     	console.log("Successfully Created!");
 	     	$scope.clearForm();
 		}, function(error) {
