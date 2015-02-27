@@ -1,10 +1,12 @@
-UserProfileApp.controller('userSearchController', function($scope, $location, usersService) {
+UserProfileApp.controller('userSearchController', function($scope, usersService) {
   
   usersService.getUsers().then(function(usersList) {
     $scope.users = usersList;
   }, function(error) {
     console.log(error);
   });
+
+  console.log("asdf");
 
   $scope.changeBackground = function() {
     var backgrounds = ["./assets/gifs/aot.gif", "./assets/gifs/catsInBox.gif", "./assets/gifs/minecraft.gif",

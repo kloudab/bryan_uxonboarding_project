@@ -1,7 +1,7 @@
-UserProfileApp.directive('usersSearchDirective', function(userSearchController) {
+UserProfileApp.directive('usersSearch', function(userSearchController) {
 	return {
 		restrict: 'E',
-		template: './assets/scripts/templates/userSearchView.html',
+		templateUrl: './assets/templates/userSearchView.html',
 		controller: userSearchController
 	}
-}
+})

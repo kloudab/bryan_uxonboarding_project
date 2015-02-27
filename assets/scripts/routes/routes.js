@@ -1,28 +1,28 @@
 UserProfileApp.config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
   .state('home', {
-    url: '/',
+    url: '/'
   })
-  .state('profile', {
-    url: '/profile/:id',
-    templateUrl: './assets/templates/userProfileView.html',
+  .state('create_user', {
+    url: '/create_user',
+    templateUrl: './assets/partials/userCreatorSuitePartial.html'
+  })
+  .state('edit', {
+    url: '/edit/:id',
+    templateUrl: './assets/partials/userEditPartial.html',
     controller: function($scope, $stateParams) {
       $scope.id = $stateParams.id;
     }
   })
-  .state('edit', {
-    url: '/edit/:id',
-    templateUrl: './assets/templates/userEditingProfileView.html',
+  .state('profile', {
+    url: '/profile/:id',
+    templateUrl: './assets/partials/userProfilePartial.html',
     controller: function($scope, $stateParams) {
       $scope.id = $stateParams.id;
     }
   })
   .state('search_users', {
     url: '/search_users',
-    templateUrl: './assets/templates/userSearchView.html',
+    templateUrl: './assets/partials/userSearchPartial.html'
   })
-  .state('create_user', {
-    url: '/create_user',
-    templateUrl: './assets/templates/userCreateProfileView.html',
-  });
 });

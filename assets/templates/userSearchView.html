@@ -39,9 +39,9 @@
     <tr>
       <th><button class='fullButton' ng-click='changeBackground()'>FUN BUTTON</button></th>
       <th><button class='fullButton' ng-click='order="firstName"; reverse=!reverse'>First</button></th>
-      <th><button class='fullButton' ng-click='order="lastName"; reverse=!reverse''>Last</button></th>
-      <th><button class='fullButton' ng-click='order="phone"; reverse=!reverse''>Phone</button></th>
-      <th><button class='fullButton' ng-click='order="email"; reverse=!reverse''>Email</button></th>
+      <th><button class='fullButton' ng-click='order="lastName"; reverse=!reverse'>Last</button></th>
+      <th><button class='fullButton' ng-click='order="phone"; reverse=!reverse'>Phone</button></th>
+      <th><button class='fullButton' ng-click='order="email"; reverse=!reverse'>Email</button></th>
     </tr>
     <tr class='searchResults' ng-repeat='user in users | filter:search | orderBy:order:reverse'>
       <td><a ui-sref="profile({id: user._id})"><button class='fullButton'>Get User</button></a></td>
