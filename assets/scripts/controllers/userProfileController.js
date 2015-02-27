@@ -1,10 +1,16 @@
 UserProfileApp.controller('userProfileController', function($scope, $location, usersService) {
   
+  // $scope.user = {};
+
   usersService.getUserById($scope.id).then(function(user) {
     $scope.user = user;
   }, function(error) {
     console.log(error);
   });
+
+  // $scope.returnUserId = function() {
+  //   return $scope.user._id;
+  // }
 
   $scope.toggleShowName = function() {
     $scope.showName = !$scope.showName;

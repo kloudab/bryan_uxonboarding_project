@@ -35,18 +35,16 @@
   </table>
   </div>
   
-  <table>
+  <table ng-init='reverse=true'>
     <tr>
       <th><button class='fullButton' ng-click='changeBackground()'>FUN BUTTON</button></th>
-      <th><button class='fullButton' ng-click='toggleShowFirstNames()'>First</button></th>
-      <th><button class='fullButton' ng-click='toggleShowLastNames()'>Last</button></th>
-      <th><button class='fullButton' ng-click='toggleShowPhoneNumbers()'>Phone</button></th>
-      <th><button class='fullButton' ng-click='toggleShowEmails()'>Email</button></th>
+      <th><button class='fullButton' ng-click='order="firstName"; reverse=!reverse'>First</button></th>
+      <th><button class='fullButton' ng-click='order="lastName"; reverse=!reverse''>Last</button></th>
+      <th><button class='fullButton' ng-click='order="phone"; reverse=!reverse''>Phone</button></th>
+      <th><button class='fullButton' ng-click='order="email"; reverse=!reverse''>Email</button></th>
     </tr>
-    <tr class='searchResults' ng-repeat='user in users | filter:search:strict'>
-<!--       <td><button class='fullButton' ng-click='goToProfile(user)'>Get User</button></td>
- -->      
-      <td><a ui-sref="profile({id: '{{user._id}}' })"><button class='fullButton'>Get User</button></a>
+    <tr class='searchResults' ng-repeat='user in users | filter:search | orderBy:order:reverse'>
+      <td><a ui-sref="profile({id: user._id})"><button class='fullButton'>Get User</button></a></td>
       <td><div ng-show='showFirstNames'>{{user.firstName}}</div></td>
       <td><div ng-show='showLastNames'>{{user.lastName}}</div></td>
       <td><div ng-show='showPhoneNumbers'>{{user.phone}}</div></td>
