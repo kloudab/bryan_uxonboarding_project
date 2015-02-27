@@ -1,4 +1,4 @@
-UserProfileApp.controller('userCreationController', function($scope, $location, usersService) {
+UserProfileApp.controller('userCreatorSuiteController', function($scope, $location, usersService) {
 
 	$scope.placeholder = {
 		firstName : "Your first name here",
