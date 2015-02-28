@@ -6,8 +6,6 @@ UserProfileApp.controller('userSearchController', function($scope, usersService)
     console.log(error);
   });
 
-  console.log("asdf");
-
   $scope.changeBackground = function() {
     var backgrounds = ["./assets/gifs/aot.gif", "./assets/gifs/catsInBox.gif", "./assets/gifs/minecraft.gif",
                        "./assets/gifs/pikachuNyan.gif", "./assets/gifs/spiral.gif", "./assets/gifs/torus.gif",
@@ -21,23 +19,4 @@ UserProfileApp.controller('userSearchController', function($scope, usersService)
     // element.style.backgroundImage = url;
     // element.style.backgroundSize = '10%';
   }
-
-  $scope.showFirstNames = true;
-  $scope.showLastNames = true;
-  $scope.showPhoneNumbers = true;
-  $scope.showEmails = true;
-
-  $scope.toggleShowFirstNames = function() {
-    $scope.showFirstNames = !$scope.showFirstNames
-  }
-  $scope.toggleShowLastNames = function() {
-    $scope.showLastNames = !$scope.showLastNames
-  }
-  $scope.toggleShowPhoneNumbers = function() {
-    $scope.showPhoneNumbers = !$scope.showPhoneNumbers
-  }
-  $scope.toggleShowEmails = function() {
-    $scope.showEmails = !$scope.showEmails
-  }
-
 });

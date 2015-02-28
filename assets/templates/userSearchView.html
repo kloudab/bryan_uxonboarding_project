@@ -8,11 +8,6 @@
   <div ng-show='showSearchFilters'>
   <table>
     <tr>
-      <th>Any:</th>
-      <td><input type='text'
-                 ng-model='search.$'></td>
-    </tr>
-    <tr>
       <th>First:</th>
       <td><input type='text'
                  ng-model='search.firstName'></td>
@@ -45,10 +40,10 @@
     </tr>
     <tr class='searchResults' ng-repeat='user in users | filter:search | orderBy:order:reverse'>
       <td><a ui-sref="profile({id: user._id})"><button class='fullButton'>Get User</button></a></td>
-      <td><div ng-show='showFirstNames'>{{user.firstName}}</div></td>
-      <td><div ng-show='showLastNames'>{{user.lastName}}</div></td>
-      <td><div ng-show='showPhoneNumbers'>{{user.phone}}</div></td>
-      <td><div ng-show='showEmails'>{{user.email}}</div></td>
+      <td><div>{{user.firstName}}</div></td>
+      <td><div>{{user.lastName}}</div></td>
+      <td><div>{{user.phone}}</div></td>
+      <td><div>{{user.email}}</div></td>
     </tr>
   </table>
   </div>
