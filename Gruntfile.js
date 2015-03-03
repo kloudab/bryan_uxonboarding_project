@@ -50,50 +50,50 @@ module.exports = function(grunt) {
 					}
 				]
 			}
-		}
-	},
-	connect: {
-		server: {
-			options: {
-				port: 9001,
-				base: paths.public
-			}
-		}
-	},
-	ngtemplate: {
-		main: {
-			options: {
-				bootstrap: function(module,script) {
-					return 'UserProfileApp.run([\'$templateCache\', function($templateCache) {\n' + script + '}]);\n';
-				}
-			},
-			files: [
-				{
-					cwd: '<%= paths.private %>',
-					src: 'partials/**/*.html',
-					dest: '<%= paths.temp %>js/templates.js'
-				}
-			]
-		}
-	},
-	concat: {
-		main: {
-			files: [
-				{
-					src: files.deps.js.concat(files.js),
-					dest: '<%= paths.public %>js/application.js'
-				}
-			]
-		}
-	},
-	watch: {
-		js: {
-			files: files.js,
-			tasks: ['concat']
 		},
-		others: {
-			files: files.css.concat(files.gifs),
-			tasks: ['copy']
+		connect: {
+			server: {
+				options: {
+					port: 9001,
+					base: paths.public
+				}
+			}
+		},
+		ngtemplate: {
+			main: {
+				options: {
+					bootstrap: function(module,script) {
+						return 'UserProfileApp.run([\'$templateCache\', function($templateCache) {\n' + script + '}]);\n';
+					}
+				},
+				files: [
+					{
+						cwd: '<%= paths.private %>',
+						src: 'templates/*.html',
+						dest: '<%= paths.temp %>js/templates.js'
+					}
+				]
+			}
+		},
+		concat: {
+			main: {
+				files: [
+					{
+						src: files.deps.js.concat(files.js),
+						dest: '<%= paths.public %>js/application.js'
+					}
+				]
+			}
+		},
+		watch: {
+			js: {
+				files: files.js,
+				tasks: ['concat']
+			},
+			others: {
+				files: files.css.concat(files.gifs),
+				tasks: ['copy']
+			}
 		}
 	});
 
