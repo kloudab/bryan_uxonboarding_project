@@ -1,45 +1,92 @@
-html {
-  background: green;
+body {
+  background-image: url("./assets/gifs/catsInBox.gif");
+  background-size: 100%;
 }
 
-#UserProfile,
-#UserProfileEdit {
+#UserProfile {
   background: blue;
-  border-radius: 25px;
+  border-radius: 10px;
+  width: 45%;
+}
+
+#UserProfileEdit {
+  background: red;
+  border-radius: 10px;
+  width: 45%;
 }
 
 #UserCreateProfile {
-  background: red;
-  border-radius: 25px;
+  background: white;
+  border-radius: 10px;
+  width: 45%;
 }
 
 #SearchUsers {
   line-height: 30px;
   background-color: orange;
   height: 100%;
-  width: 300px;
+  width: inherit;
+  height: inherit;
   padding: 5px;
   float: right;
 }
 
-h2.profileInfo {
+.fullButton {
+  display: block;
+  text-align: center;
+  width: 100%;
+}
+
+.getUserButtonText {
+  text-align: center;
+  width: inherit;
+}
+
+.searchResults {
+  background: white;
+}
+
+h1 {
+  margin-bottom: 0px;
+}
+
+h2 {
   display: inline;
   margin-bottom: 0px;
 }
 
-h3.profileInfo {
+h3 {
   display: inline;
   margin-bottom: 0px;
   margin-top: 0px;
 }
 
-h4.profileInfo {
+h4 {
   display: inline;
   color: yellow;
   margin-bottom: 0px;
   margin-top: 0px;
 }
 
-.searchResults {
-  background: white;
+div.profileInfo {
+  width: 320px;
+  padding: 10px;
+  margin: 0;
+  display: inline;
+}
+
+input.ng-invalid {
+  border: 1px solid red;
+}
+
+input.ng-valid {
+  border: 1px solid green;
+}
+
+th {
+  text-align: left;
+}
+
+.clearButton {
+  float: right;
 }

@@ -1,0 +1,51 @@
+<div id='UserCreateProfile' ng-controller='userCreatorSuiteController'>
+  
+  <h1>User Profile Creator Suite</h1>
+  <form name='createProfileForm' ng-model='user' novalidate>
+  <table>
+    <tr><th>Name:</th></tr>
+    <tr>
+      <td><div class="profileInfo">First:</div></td>
+      <td><input type='text'
+                 name='firstName'
+                 ng-model='user.firstName'
+                 ng-minlength=3
+                 placeholder={{placeholder.firstName}}
+                 required></td>
+    </tr>
+    <tr>
+      <td><div class="profileInfo">Last:</div></td>
+      <td><input type='text'
+                 name='lastName'
+                 ng-model='user.lastName'
+                 ng-minlength=3
+                 placeholder={{placeholder.lastName}} required></td>
+    </tr>
+
+    <tr><th>Contact:</th></tr>
+    <tr>
+      <td><div class="profileInfo">Phone:</div></td>
+      <td><input type='text'
+                 name='phone'
+                 ng-model='user.phone'
+                 ng-minlength=12 ng-maxlength=14
+                 ng-pattern='phonePattern'
+                 placeholder={{placeholder.phone}} required></td>
+      <td><button ng-click='alertInformation()'>?</button></td>
+    </tr>
+    <tr>
+      <td><div class="profileInfo">Email:</div></td>
+      <td><input type='email'
+                 name='email'
+                 ng-model='user.email'
+                 placeholder={{placeholder.email}} required></td>
+    </tr>
+    <tr>
+      <td><button ng-click='createUser(user)'>Create</button></td>
+      <td><button ng-click='clearForm()' class='clearButton'>Clear Form</button></td>
+    </tr>
+
+  </table>
+  </form>
+
+</div>

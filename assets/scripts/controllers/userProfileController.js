@@ -1,21 +1,34 @@
-UserProfileApp.controller('userProfileController', function($scope, $location,
-                                                            usersService, userService) {
-  $scope.profileVisibility = {
-    showName: true,
-    showContact: true
-  };
-  $scope.toggleContactInfo = function() {
-    $scope.profileVisibility.showContact = ($scope.profileVisibility.showContact === false ? true : false);
-  };
-  $scope.toggleName = function() {
-    $scope.profileVisibility.showName = ($scope.profileVisibility.showName === false ? true : false);
+UserProfileApp.controller('userProfileController', function($scope, $location, usersService) {
+  
+  // $scope.user = {};
+
+  usersService.getUserById($scope.id).then(function(user) {
+    $scope.user = user;
+  }, function(error) {
+    console.log(error);
+  });
+
+  // $scope.returnUserId = function() {
+  //   return $scope.user._id;
+  // }
+
+  $scope.toggleShowName = function() {
+    $scope.showName = !$scope.showName;
+    if ($scope.showName == true) {
+      $scope.showNameButtonText = "Hide Name"
+    } else {
+      $scope.showNameButtonText = "Show Name"
+    };
   };
 
-  var getUser = function() {
-    return userService.getUser();
+  $scope.toggleShowContact = function() {
+    $scope.showContact = !$scope.showContact
+    if ($scope.showContact == true) {
+      $scope.showContactButtonText = "Hide Contact"
+    } else {
+      $scope.showContactButtonText = "Show Contact"
+    };
   };
-
-  $scope.user = getUser();
 
   $scope.removeUser = function(user) {
     var userId = {id: user._id};
@@ -26,9 +39,10 @@ UserProfileApp.controller('userProfileController', function($scope, $location,
       console.log(error);
     });
   };
-
-  $scope.goToEditProfile = function() {
-    $location.path('/edit');
-  }
+  
+  $scope.showName = true;
+  $scope.showContact = true;
+  $scope.showNameButtonText = "Hide Name";
+  $scope.showContactButtonText = "Hide Contact";
 
 });

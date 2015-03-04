@@ -1,38 +1,56 @@
 <div id='SearchUsers' ng-controller='userSearchController'>
   
-    <form name='editProfileForm'>
-      <label name='firstName'>First Name: </label>
-      <input type='text'
-      name='firstName'
-      ng-model='firstName'
-      placeholder='nayrB' />
-      <br>
+  <div><label><input type='checkbox'
+         ng-checked='showSearchFilters'
+         ng-init='showSearchFilters = false'
+         ng-model='showSearchFilters'>Show Search Options</label></div>
 
-      <label name='lastName'>Last Name: </label>
-      <input type='text'
-      name='lastName'
-      ng-model='lastName'
-      placeholder='aduolK' />
-      <br>
-
-      <label name='phone'>Phone: </label>
-      <input type='text'
-      name='phoneNumber'
-      ng-model='phoneNumber'
-      placeholder='0917-127-913' />
-      <br>
-
-      <label name='email'>Email: </label>
-      <input type='email'
-      name='email'
-      ng-model='email'
-      placeholder='moc.liamg@aduolk.nayrb' />
-      <br>
-    </form>
+  <div ng-show='showSearchFilters'>
+  <table>
+    <tr>
+      <th>Any:</th>
+      <td><input type='text'
+                 ng-model='search.$'></td>
+    </tr>
+    <tr>
+      <th>First:</th>
+      <td><input type='text'
+                 ng-model='search.firstName'></td>
+    </tr>
+    <tr>
+      <th>Last:</th>
+      <td><input type='text'
+                 ng-model='search.lastName'></td>
+    </tr>
+    <tr>
+      <th>Phone:</th>
+      <td><input type='text'
+                 ng-model='search.phone'></td>
+    </tr>
+    <tr>
+      <th>Email:</th>
+      <td><input type='text'
+                 ng-model='search.email'></td>
+    </tr>
+  </table>
+  </div>
   
-  <div class='searchResults' ng-repeat='user in users'>
-    <button ng-click='goToProfile(user)'>Get User</button>
-    <a>{{user.firstName}} : {{user.lastName}}</a>
+  <table ng-init='reverse=true'>
+    <tr>
+      <th><button class='fullButton' ng-click='changeBackground()'>FUN BUTTON</button></th>
+      <th><button class='fullButton' ng-click='order="firstName"; reverse=!reverse'>First</button></th>
+      <th><button class='fullButton' ng-click='order="lastName"; reverse=!reverse'>Last</button></th>
+      <th><button class='fullButton' ng-click='order="phone"; reverse=!reverse'>Phone</button></th>
+      <th><button class='fullButton' ng-click='order="email"; reverse=!reverse'>Email</button></th>
+    </tr>
+    <tr class='searchResults' ng-repeat='user in users | filter:search | orderBy:order:reverse'>
+      <td><a ui-sref="profile({id: user._id})"><button class='fullButton'>Get User</button></a></td>
+      <td><div ng-show='showFirstNames'>{{user.firstName}}</div></td>
+      <td><div ng-show='showLastNames'>{{user.lastName}}</div></td>
+      <td><div ng-show='showPhoneNumbers'>{{user.phone}}</div></td>
+      <td><div ng-show='showEmails'>{{user.email}}</div></td>
+    </tr>
+  </table>
   </div>
 
 </div>
