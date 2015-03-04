@@ -1,1 +1,1 @@
-var UserProfileApp = angular.module('UserProfileApp', ['ui.router', 'ngResource']);
+//var UserProfileApp = angular.module('UserProfileApp', ['ui.router', 'ngResource']);
