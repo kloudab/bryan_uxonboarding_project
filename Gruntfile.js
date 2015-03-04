@@ -14,7 +14,7 @@ module.exports = function(grunt) {
 			'<%= paths.private %>css/*.css'
 		],
 		gifs: [
-			'<%= paths.private %>gifs/**/*'
+			'<%= paths.private %>gifs/*'
 		],
 		deps: {
 			js: [
