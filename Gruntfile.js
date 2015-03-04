@@ -93,6 +93,15 @@ module.exports = function(grunt) {
 				files: files.css.concat(files.gifs),
 				tasks: ['copy']
 			}
+		},
+		uglify: {
+			options: {
+				banner: '/*! <%= pkg.name %> <%= grunt.template.today("dd-mm-yyyy") %> */\n'
+			},
+			js: {
+				src: ['<%= paths.public %>js/application.js'],
+				dest: '<%= paths.public %>js/application.js'
+			}
 		}
 	});
 
@@ -101,7 +110,9 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-connect');
+	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-angular-templates');
 
-	grunt.registerTask('default', ['clean', 'ngtemplates', 'concat', 'copy', 'connect', 'watch']);
+	grunt.registerTask('dev', ['clean', 'ngtemplates', 'concat', 'copy', 'connect', 'watch']);
+	grunt.registerTask('dist', ['clean', 'ngtemplates', 'concat', 'copy', 'uglify']);
 };
