@@ -1,15 +1,18 @@
-UserProfileApp.controller('userEditController', function($scope, usersService) {
+UserProfileApp.controller('userEditController', function($scope, $state, usersService) {
 	
 	usersService.getUserById($scope.id).then(function(user) {
 		$scope.user = user;
-		$scope.editedUser = user;
 	}, function(error) {
 		console.log(error);
 	});
 
 	$scope.saveUserEdits = function(user) {
-		var userId = {id: user._id};
-		usersService.updateUser(user);
+		usersService.updateUser(user).then (function() {
+			alert("Success!");
+			$state.go('profile',{id:user._id});
+		}, function(error) {
+			console.log(error)
+		});
 	}
 
 	$scope.alertInformation = function() {

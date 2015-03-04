@@ -1,7 +1,7 @@
 UserProfileApp.directive('userCreatorSuite', function() {
 	return {
 		restrict: 'E',
-		templateUrl: './assets/templates/userCreatorSuiteView.html',
+		templateUrl: 'partials/userCreatorSuiteView.html',
 		controller: "userCreatorSuiteController"
 	}
 })

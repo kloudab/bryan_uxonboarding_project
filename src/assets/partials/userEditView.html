@@ -34,7 +34,8 @@
       <td><div class="profileInfo">Email:</div></td>
       <td><input type='email'
                  name='email'
-                 ng-model='user.email' required></td>
+                 ng-model='user.email'
+                 ng-disabled='true' required></td>
     </tr>
     <tr>
       <td><button ng-click='saveUserEdits(user)'>Save</button></td>

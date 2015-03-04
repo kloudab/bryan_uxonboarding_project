@@ -1,21 +1,5 @@
 UserProfileApp.controller('userCreatorSuiteController', function($scope, $location, usersService) {
 
-	$scope.placeholder = {
-		firstName : "Your first name here",
-		lastName : "Your last name here",
-		phone : "Your phone# here (xxx) xxx-xxxx",
-		email : "Your email address here"
-	};
-
-	$scope.resetUser = function() {
-		$scope.user = {
-			firstName : "",
-			lastName : "",
-			phone : "",
-			email : ""
-		};
-	};
-
 	$scope.createUser = function(user) {
 		usersService.createUser(user).then(function() {
 	     	console.log("Successfully Created!");
@@ -26,9 +10,25 @@ UserProfileApp.controller('userCreatorSuiteController', function($scope, $locati
 	};
 
 	$scope.clearForm = function() {
-		$scope.createProfileForm.$setPristine();
 		$scope.resetUser();
+		$scope.createProfileForm.$setPristine();
 	}
+
+	$scope.resetUser = function() {
+		$scope.user = {
+			firstName : "",
+			lastName : "",
+			phone : "",
+			email : ""
+		};
+	};
+
+	$scope.placeholder = {
+		firstName : "Your first name here",
+		lastName : "Your last name here",
+		phone : "Your phone# here (xxx) xxx-xxxx",
+		email : "Your email address here"
+	};
 
 	$scope.alertInformation = function() {
 		alert("Format Options for Phone Number:\n\n" +

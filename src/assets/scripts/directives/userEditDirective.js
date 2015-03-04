@@ -1,7 +1,7 @@
 UserProfileApp.directive('userEdit', function() {
 	return {
 		restrict: 'E',
-		templateUrl: './assets/templates/userEditView.html',
+		templateUrl: 'partials/userEditView.html',
 		controller: "userEditController"
 	}
 })

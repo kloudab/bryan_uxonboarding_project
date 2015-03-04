@@ -1,15 +1,15 @@
-UserProfileApp.service('usersService', function($q,userIdFactory,usersFactory) {
+UserProfileApp.service('usersService', function($q,userFactory) {
 	function getUsers() {
-		return usersFactory.get().$promise;
+		return userFactory.get().$promise;
 	}
 
 	function createUser(user) {
-		return usersFactory.create(user).$promise;
+		return userFactory.create(user).$promise;
 	}
 
 	function getUserById(id) {
 		var deferredUser = $q.defer();
-		usersFactory.get().$promise.then(function(usersList) {
+		userFactory.get().$promise.then(function(usersList) {
 			angular.forEach(usersList, function(user) {
 				if (user._id == id) {
 					deferredUser.resolve(user);
@@ -22,11 +22,11 @@ UserProfileApp.service('usersService', function($q,userIdFactory,usersFactory) {
 	};
 
 	function updateUser(user) {
-		return userIdFactory.update(user).$promise;
+		return userFactory.update(user).$promise;
 	}
 
 	function removeUser(id) {
-		return userIdFactory.remove(id).$promise;
+		return userFactory.remove(id).$promise;
 	}
 
 	return {

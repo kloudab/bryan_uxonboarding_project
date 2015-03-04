@@ -1,0 +1,1 @@
+//var UserProfileApp = angular.module('UserProfileApp', ['ui.router', 'ngResource']);

@@ -1,7 +1,7 @@
 UserProfileApp.directive('userProfile', function() {
 	return {
 		restrict: 'E',
-		templateUrl: './assets/templates/userProfileView.html',
+		templateUrl: 'partials/userProfileView.html',
 		controller: "userProfileController"
 	}
 })
