@@ -2,10 +2,9 @@ module.exports = function(grunt) {
 	var paths = {
 		public: 'dist/',
 		private: 'src/assets/',
-		node: 'node_modules',
+		node: 'node_modules/',
 		temp: 'temp/'
 	};
-
 	var files = {
 		js: [
 			'<%= paths.private %>scripts/**/*.js',
@@ -45,7 +44,7 @@ module.exports = function(grunt) {
 					},{
 						expand: true,
 						flatten: true,
-						src: 'src/index.html',
+						src: './src/index.html',
 						dest: '<%= paths.public %>'
 					}
 				]
@@ -59,7 +58,7 @@ module.exports = function(grunt) {
 				}
 			}
 		},
-		ngtemplate: {
+		ngtemplates: {
 			main: {
 				options: {
 					bootstrap: function(module,script) {
@@ -69,7 +68,7 @@ module.exports = function(grunt) {
 				files: [
 					{
 						cwd: '<%= paths.private %>',
-						src: 'templates/*.html',
+						src: 'partials/*.html',
 						dest: '<%= paths.temp %>js/templates.js'
 					}
 				]
