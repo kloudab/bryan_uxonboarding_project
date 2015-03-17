@@ -56,6 +56,11 @@ module.exports = function(grunt) {
 					port: 9001,
 					base: paths.public
 				}
+			},
+			testserver: {
+				options: {
+					port: 9876
+				}
 			}
 		},
 		ngtemplates: {
@@ -102,6 +107,13 @@ module.exports = function(grunt) {
 				src: ['<%= paths.public %>js/application.js'],
 				dest: '<%= paths.public %>js/application.js'
 			}
+		},
+		karma: {
+			e2e: {
+				configFile: './test/karma-e2e.conf.js',
+				autoWatch: false,
+				singleRun: true
+			}
 		}
 	});
 
@@ -112,7 +124,10 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-connect');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-angular-templates');
+	grunt.loadNpmTasks('grunt-karma');
 
 	grunt.registerTask('dev', ['clean', 'ngtemplates', 'concat', 'copy', 'connect', 'watch']);
 	grunt.registerTask('dist', ['clean', 'ngtemplates', 'concat', 'copy', 'uglify']);
+
+	grunt.registerTask('test', ['connect:testserver', 'karma:e2e']);
 };
